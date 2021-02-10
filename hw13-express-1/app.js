@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 
-app.use('/', (req, res) => { 
-    res.send("Hellow World!")
+app.get('/', (req, res) => { 
+    res.send("<h1 style='color:red;'>Hellow World!</h1>")
 });
 
 app.listen(5000, () => {
