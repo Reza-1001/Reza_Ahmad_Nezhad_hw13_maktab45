@@ -1,10 +1,19 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-app.use(express.static(path.join(__dirname, "public")));
-app.use('/', (req, res) => { 
+
+app.get('/', (req, res) => { 
     res.sendFile(path.join(__dirname, 'public/index.html'))
 });
-app.listen(5008, () => {
-    console.log("server is running on port 5005 ...");
+app.get('/main.js', (req, res) => { 
+    res.sendFile(path.join(__dirname, 'public/main.js'))
+});
+app.get('/style.css', (req, res) => { 
+    res.sendFile(path.join(__dirname, 'public/style.css'))
+});
+app.get('/photo.jpg', (req, res) => { 
+    res.sendFile(path.join(__dirname, 'public/photo.jpg'))
+});
+app.listen(5000, () => {
+    console.log("server is running on port 5000 ...");
 })

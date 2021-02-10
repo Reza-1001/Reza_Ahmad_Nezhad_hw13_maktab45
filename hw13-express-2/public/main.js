@@ -1,1 +1,1 @@
-alert("Hi");
+document.getElementById("message").innerText="Hello from main.js file";
